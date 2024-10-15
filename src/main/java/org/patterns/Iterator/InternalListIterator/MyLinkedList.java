@@ -1,16 +1,43 @@
 package org.patterns.Iterator.InternalListIterator;
 
+import java.util.Iterator;
+
 /**
  * A class that implements the MyList<E> interface using a linked list of nodes.
  *
- * @author Rui Meireles
+ * @author Prairie Goodwin
  * @version 1.1
  */
-public class MyLinkedList<E> implements MyList<E>{
+public class MyLinkedList<E> implements MyList<E>, Iterable<E>{
     /* A reference to the first node on the list */
     private Node<E> headNode = null;
     /* Keeps track of the list's size */
     private int size = 0;
+
+    private class MyLinkedListIterator<E> implements Iterator<E>{
+        private Node<E> next;
+
+        public MyLinkedListIterator(){
+           this.next = (Node<E>) MyLinkedList.this.headNode;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return (this.next != null);
+        }
+
+        @Override
+        public E next() {
+            E retval = this.next.getValue();
+            this.next = this.next.getNext();
+            return retval;
+        }
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new MyLinkedListIterator<>();
+    }
 
     /**
      * List constructor.

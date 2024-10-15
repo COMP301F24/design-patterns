@@ -2,7 +2,7 @@ package org.patterns.Iterator.InternalListIterator;
 /**
  * A simple class to represent a linked list node.
  *
- * @author Rui Meireles
+ * @author Prairie Goodwin
  * @version 1.1
  */
 public class Node<E>{

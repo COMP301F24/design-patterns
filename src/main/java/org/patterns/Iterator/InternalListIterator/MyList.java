@@ -4,7 +4,7 @@ package org.patterns.Iterator.InternalListIterator;
  * An interface specifying the operations that should be supported
  * by a simple list data structure.
  *
- * @author Rui Meireles
+ * @author Prairie Goodwin
  * @version 1.1
  */
 public interface MyList<E>{

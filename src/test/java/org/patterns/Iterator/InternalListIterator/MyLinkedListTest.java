@@ -13,8 +13,6 @@ import org.junit.jupiter.api.Test;
  * For that, subclasses need only override the
  * createEmptyIntList() method.
  * The tests try to test all methods and corner cases.
- * We recommend you tackle them (i.e. try to make them pass) in the
- * order they appear in this file.
  * Tests have been updated to JUnit 5.8.1, and to remove Explicit Boxing
  * constructors which have deprecated and marked for removal.
  *
