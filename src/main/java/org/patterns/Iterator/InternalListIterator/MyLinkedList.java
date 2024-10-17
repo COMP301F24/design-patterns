@@ -1,6 +1,7 @@
 package org.patterns.Iterator.InternalListIterator;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * A class that implements the MyList<E> interface using a linked list of nodes.
@@ -18,8 +19,9 @@ public class MyLinkedList<E> implements MyList<E>, Iterable<E>{
         private Node<E> next;
 
         public MyLinkedListIterator(){
-           this.next = (Node<E>) MyLinkedList.this.headNode;
+            next = (Node<E>) MyLinkedList.this.headNode;
         }
+
 
         @Override
         public boolean hasNext() {
@@ -28,21 +30,20 @@ public class MyLinkedList<E> implements MyList<E>, Iterable<E>{
 
         @Override
         public E next() {
-            E retval = this.next.getValue();
-            this.next = this.next.getNext();
-            return retval;
+            if(hasNext()){
+                E retval = next.getValue();
+                next = next.getNext();
+                return retval;
+            }
+            throw new NoSuchElementException();
         }
     }
 
     @Override
-    public Iterator<E> iterator() {
+    public Iterator<E> iterator(){
         return new MyLinkedListIterator<>();
     }
 
-    /**
-     * List constructor.
-     * @return an empty list.
-     */
     public MyLinkedList(){ }
 
     /**
@@ -50,7 +51,7 @@ public class MyLinkedList<E> implements MyList<E>, Iterable<E>{
      *
      * @return the number of elements on the list.
      */
-    public int size(){ return this.size; };
+    public int size(){ return this.size; }
 
     /**
      * Appends a new element to the end of the list.

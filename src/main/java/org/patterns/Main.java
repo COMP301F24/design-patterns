@@ -17,13 +17,16 @@ public class Main {
 
         Iterator<Integer> iterator = myList.iterator();
 
+        for(int i : myList){
+            i++;
+        }
+
+
+
         while(iterator.hasNext()){
             System.out.println(iterator.next());
         }
 
-        for(int i : myList){
-            System.out.println(i);
-        }
 
 
     }
