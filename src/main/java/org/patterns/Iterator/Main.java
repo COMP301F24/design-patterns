@@ -1,4 +1,4 @@
-package org.patterns;
+package org.patterns.Iterator;
 
 import org.patterns.Iterator.InternalListIterator.MyLinkedList;
 import java.util.Iterator;
