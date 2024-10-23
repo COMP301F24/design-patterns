@@ -18,13 +18,6 @@ public class Main {
 
         miles.write(path, "Yeah, except, you know... spandex.");
 
-        Document doc = DefinitelyNotGoogleDriveMultiton.getDoc(path);
-        System.out.println(doc);
-
-        harry.nuke(path);
-
-        System.out.println(doc);
-
 
 
 
