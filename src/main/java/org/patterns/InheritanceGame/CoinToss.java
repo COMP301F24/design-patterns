@@ -10,9 +10,10 @@ public class CoinToss extends AGame {
     public void play() {
         double odds = Math.random(); //Returns a number [0-1).
         if(odds > 0.5){
-            win();
+            System.out.println(win());
+        } else {
+          System.out.println("You lost.  Please play again.");
         }
-        System.out.println("You lost.  Please play again.");
     }
 
     @Override
