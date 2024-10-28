@@ -3,9 +3,9 @@ package org.patterns.Observer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameImpl implements Game {
+public class GameImpl implements Subject {
   // Observable: Encapsulates a list of observers
-  private List<Fan> observers;
+  private List<Observer> observers;
 
   // Encapsulates two teams and two scores
   private String home;
@@ -15,7 +15,7 @@ public class GameImpl implements Game {
 
   // Constructor
   public GameImpl(String visitingTeam, String homeTeam) {
-    observers = new ArrayList<Fan>();
+    observers = new ArrayList<Observer>();
 
     home = homeTeam;
     visitor = visitingTeam;
@@ -24,18 +24,18 @@ public class GameImpl implements Game {
   }
 
   // Observable: Registers an observer by adding it to the list
-  public void addObserver(Fan o) {
+  public void addObserver(Observer o) {
     observers.add(o);
   }
 
   // Observable: De-registers an observer by removing it from the list
-  public void removeObserver(Fan o) {
+  public void removeObserver(Observer o) {
     observers.remove(o);
   }
 
   // Observable: Calls update() on each observer to notify them of an event
   public void notifyObservers() {
-    for (Fan o : observers) {
+    for (Observer o : observers) {
       o.update();
     }
   }

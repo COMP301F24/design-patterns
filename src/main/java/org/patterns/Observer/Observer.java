@@ -1,5 +1,5 @@
 package org.patterns.Observer;
 
-public interface Fan {
+public interface Observer {
   void update();
 }
