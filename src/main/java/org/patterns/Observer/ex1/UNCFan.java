@@ -1,11 +1,11 @@
-package org.patterns.Observer;
+package org.patterns.Observer.ex1;
 
-public class UNCFan implements Observer {
+public class UNCFan implements Fan {
   // Encapsulates the game it observes
-  private Subject game;
+  private Game game;
 
   // Constructor
-  public UNCFan(Subject g) {
+  public UNCFan(Game g) {
     game = g;
     game.addObserver(this);
   }

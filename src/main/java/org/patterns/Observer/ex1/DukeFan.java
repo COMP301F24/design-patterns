@@ -1,11 +1,11 @@
-package org.patterns.Observer;
+package org.patterns.Observer.ex1;
 
-public class DukeFan implements Observer {
+public class DukeFan implements Fan {
   // Encapsulates the game it observes
-  private Subject game;
+  private Game game;
 
   // Constructor
-  public DukeFan(Subject g) {
+  public DukeFan(Game g) {
     game = g;
     game.addObserver(this);
   }

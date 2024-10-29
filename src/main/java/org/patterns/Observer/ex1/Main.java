@@ -1,11 +1,11 @@
-package org.patterns.Observer;
+package org.patterns.Observer.ex1;
 
 import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
     // Create game object (observable)
-    Subject g = new GameImpl("Duke", "UNC");
+    Game g = new GameImpl("Duke", "UNC");
 
     // Create fan objects (observers)
     UNCFan tar_heel = new UNCFan(g);

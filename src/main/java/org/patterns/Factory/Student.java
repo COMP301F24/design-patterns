@@ -3,7 +3,7 @@ package org.patterns.Factory;
 public class Student {
     Notification.Type preference;
 
-    Student(Notification.Type preference){
+    public Student(Notification.Type preference){
         this.preference = preference;
     }
 

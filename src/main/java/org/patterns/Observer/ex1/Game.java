@@ -1,11 +1,11 @@
-package org.patterns.Observer;
+package org.patterns.Observer.ex1;
 
-public interface Subject {
+public interface Game {
   // Registers an observer by adding it to the list
-  void addObserver(Observer o);
+  void addObserver(Fan o);
 
   // De-registers an observer by removing it from the list
-  void removeObserver(Observer o);
+  void removeObserver(Fan o);
 
   // Calls update() on each observer to notify them of an event
   void notifyObservers();
