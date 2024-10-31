@@ -14,10 +14,28 @@ public class Main {
     UNCFan tar_heel = new UNCFan();
     DukeFan dookie = new DukeFan();
 
+//    Fan profPrairie = new Fan(){
+//      @Override
+//      public void update(Game g, GameEvent e){
+//        if(g.whoIsWinning().equals("UNC") || g.whoIsWinning().equals("NC State")){
+//          System.out.println("Go Team!");
+//        }
+//      }
+//    };
+
+    Fan profPrairie = (Game g, GameEvent e) -> {
+        if(g.whoIsWinning().equals("UNC") || g.whoIsWinning().equals("NC State")){
+          System.out.println("Go Team!");
+        }
+
+    };
+
+
     // Register observers
     for (Game g : games) {
       g.addObserver(tar_heel);
       g.addObserver(dookie);
+      g.addObserver(profPrairie);
     }
 
     // Allow the program user to score points

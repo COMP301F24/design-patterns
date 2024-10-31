@@ -1,8 +1,4 @@
-package org.patterns;
-
-import org.patterns.Factory.Notification;
-import org.patterns.Factory.Student;
-import org.patterns.Factory.TextNotification;
+package org.patterns.Factory;
 
 public class Main {
     public static void main(String[] args){

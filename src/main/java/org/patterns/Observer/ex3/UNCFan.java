@@ -6,11 +6,15 @@ public class UNCFan implements Fan {
   //       a lead change happened, UNC fans should GO CRAZY!
   public void update(Game g, GameEvent e) {
     if (e.getWhoScored().equals("UNC")) {
-      if (g.whoIsWinning().equals("UNC")) {
-        System.out.println("UNC Fan: GO HEELS!");
-      } else {
-        System.out.println("UNC Fan: Good job, Carolina.");
-      }
+      switch(g.whoIsWinning()){
+        case "UNC" -> {System.out.println("UNC Fan: GO HEELS!");}
+        default -> {System.out.println("UNC Fan: Good job, Carolina.");}
+       }
+//      if (g.whoIsWinning().equals("UNC")) {
+//        System.out.println("UNC Fan: GO HEELS!");
+//      } else {
+//        System.out.println("UNC Fan: Good job, Carolina.");
+//      }
     } else if (g.whoIsWinning().equals("UNC")) {
       System.out.println("UNC Fan: Stay tough, Heels.");
     }
